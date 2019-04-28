@@ -18,70 +18,70 @@ public class HelloService extends Service {
     @Override
     public void onCreate() {
         SjLog log = new SjLog("onCreate()");
-        Log.d(TAG, log.in());
+        Log.d(TAG, log.inStr());
 
         super.onCreate();
-        Log.d(TAG, log.out());
+        Log.d(TAG, log.outStr());
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         SjLog log = new SjLog("onStartCommand(" + intent + ", " + flags + ", " + startId + ")");
-        Log.d(TAG, log.in());
+        Log.d(TAG, log.inStr());
 
         final String a = intent.getAction();
         if (ACTION_INIT.equals(a)) {
             doAction(intent.getExtras());
         }
 
-        Log.d(TAG, log.out());
+        Log.d(TAG, log.outStr());
         return super.onStartCommand(intent, flags, startId);
     }
 
     private void doAction(Bundle extras) {
         SjLog log = new SjLog("doAction(" + extras + ")");
-        Log.d(TAG, log.in());
+        Log.d(TAG, log.inStr());
 
         if (!mInitialized) {
             doInit();
             mInitialized = true;
         }
 
-        Log.d(TAG, log.out());
+        Log.d(TAG, log.outStr());
     }
 
     private void doInit() {
         SjLog log = new SjLog("doInit()");
-        Log.d(TAG, log.in());
+        Log.d(TAG, log.inStr());
 
-        Log.d(TAG, log.out());
+        Log.d(TAG, log.outStr());
     }
 
     @Override
     public void onDestroy() {
         SjLog log = new SjLog("onDestroy()");
-        Log.d(TAG, log.in());
+        Log.d(TAG, log.inStr());
 
         super.onDestroy();
 
-        Log.d(TAG, log.out());
+        Log.d(TAG, log.outStr());
     }
 
     @Override
     public IBinder onBind(Intent intent) {
         SjLog log = new SjLog("onBind(" + intent + ")");
-        Log.d(TAG, log.in());
+        Log.d(TAG, log.inStr());
 
-        Log.d(TAG, log.out());
+        Log.d(TAG, log.outStr());
         return null;
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
         SjLog log = new SjLog("onUnbind(" + intent + ")");
-        Log.d(TAG, log.in());
+        Log.d(TAG, log.inStr());
 
-        Log.d(TAG, log.out());
+        Log.d(TAG, log.outStr());
         return super.onUnbind(intent);
     }
 
