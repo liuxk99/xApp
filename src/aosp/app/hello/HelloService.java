@@ -10,7 +10,6 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 public class HelloService extends Service {
-    public static boolean mInitialized = false;
     final String TAG = HelloService.class.getSimpleName();
 
     static final String ACTION_INIT = "aosp.app.hello.intent.action.INIT";
@@ -31,28 +30,18 @@ public class HelloService extends Service {
 
         final String a = intent.getAction();
         if (ACTION_INIT.equals(a)) {
-            doAction(intent.getExtras());
+            actionInit(intent.getExtras());
         }
 
         Log.d(TAG, log.outStr());
         return super.onStartCommand(intent, flags, startId);
     }
 
-    private void doAction(Bundle extras) {
-        SjLog log = new SjLog("doAction(" + extras + ")");
+    private void actionInit(Bundle extras) {
+        SjLog log = new SjLog("actionInit(" + extras + ")");
         Log.d(TAG, log.inStr());
 
-        if (!mInitialized) {
-            doInit();
-            mInitialized = true;
-        }
-
-        Log.d(TAG, log.outStr());
-    }
-
-    private void doInit() {
-        SjLog log = new SjLog("doInit()");
-        Log.d(TAG, log.inStr());
+        HelloUtils.initService(this);
 
         Log.d(TAG, log.outStr());
     }

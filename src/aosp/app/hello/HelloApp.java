@@ -16,10 +16,8 @@ public class HelloApp extends Application implements ServiceConnection {
         Log.d(TAG, log.inStr());
 
         super.onCreate();
-        if (!HelloService.mInitialized) {
-            HelloUtils.initService(this);
+        HelloUtils.initService(this);
 //            bindService(i, this, 0x0);
-        }
 
         Log.d(TAG, log.outStr());
     }

@@ -4,17 +4,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 
-public class HelloReceiver extends BroadcastReceiver {
-    static final String TAG = HelloReceiver.class.getSimpleName();
+public class BootCompletedReceiver extends BroadcastReceiver {
+    static final String TAG = BootCompletedReceiver.class.getSimpleName();
     private Context mContext;
 
-    public HelloReceiver() {
+    public BootCompletedReceiver() {
         super();
 
-        SjLog log = new SjLog("HelloReceiver()");
+        SjLog log = new SjLog("BootCompletedReceiver()");
         log.inD(TAG);
 
         log.outD(TAG);
@@ -38,7 +37,9 @@ public class HelloReceiver extends BroadcastReceiver {
         SjLog log = new SjLog("doActionBootCompleted(" + extras + ")");
         log.inD(TAG);
 
-        HelloUtils.initService(mContext);
+        if (!HelloUtils.mInitialized) {
+            HelloUtils.initService(mContext);
+        }
         log.outD(TAG);
     }
 }
