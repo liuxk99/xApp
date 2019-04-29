@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="aosp.app.hello"
-    android:versionCode="1"
+    android:versionCode="2"
     android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:name=".HelloApp"
@@ -26,12 +27,11 @@
             </intent-filter>
         </activity>
 
-        <broadcastreceiver android:name=".HelloReceiver">
+        <receiver android:name=".HelloReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </broadcastreceiver>
+        </receiver>
 
         <service android:name=".HelloService">
             <intent-filter>

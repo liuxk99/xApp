@@ -2,7 +2,6 @@ package aosp.app.hello;
 
 import android.app.Application;
 import android.content.ComponentName;
-import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
@@ -18,10 +17,8 @@ public class HelloApp extends Application implements ServiceConnection {
 
         super.onCreate();
         if (!HelloService.mInitialized) {
-            Intent i = new Intent(this, HelloService.class);
-            i.setAction(HelloService.ACTION_INIT);
-//            startService(i);
-            bindService(i, this, 0x0);
+            HelloUtils.initService(this);
+//            bindService(i, this, 0x0);
         }
 
         Log.d(TAG, log.outStr());
