@@ -1,0 +1,26 @@
+01-01 08:00:41.501  2562  2659 V PackageParser: packageName: aosp.app.hello
+01-01 08:00:41.504  2562  2659 V PackageParser: packageName: aosp.app.hello
+01-01 08:00:42.330  2562  2562 I PackageManager: Package aosp.app.hello checking android.permission.RECEIVE_BOOT_COMPLETED: BasePermission{772b573 android.permission.RECEIVE_BOOT_COMPLETED}
+04-28 09:44:12.267  2562  2683 I PackageManager: Package aosp.app.hello checking android.permission.RECEIVE_BOOT_COMPLETED: BasePermission{772b573 android.permission.RECEIVE_BOOT_COMPLETED}
+04-28 09:44:22.525  2562  2562 I PackageManager.DexOptimizer: Running dexopt (dexoptNeeded=1) on: /vendor/app/xApp/xApp.apk pkg=aosp.app.hello isa=arm64 dexoptFlags=boot_complete,public target-filter=quicken oatDir=null sharedLibraries=null
+04-28 09:45:20.341  2562  2562 I DefaultPermGrantPolicy: Skip package aosp.app.hello
+04-28 09:45:23.529  2562  2625 D ActivityManager-Keeper: launch persistent app aosp.app.hello
+04-28 09:45:23.540  2562  2625 I am_proc_start: [0,3575,10043,aosp.app.hello,added application,aosp.app.hello]
+04-28 09:45:23.540  2562  2625 I ActivityManager: Start proc 3575:aosp.app.hello/u0a43 for added application aosp.app.hello
+04-28 09:45:23.541  2562  2625 V ActivityManager-Killer: ***Creating new process aosp.app.hello/3575 from system_server/2562
+04-28 09:45:23.669  2562  3422 I am_proc_bound: [0,3575,aosp.app.hello]
+04-28 09:45:23.905  3575  3575 D HelloApp: => onCreate()
+04-28 09:45:23.906  3575  3575 D HelloUtils: => initService(aosp.app.hello.HelloApp@7a37593)
+04-28 09:45:23.906  3575  3575 D HelloUtils: => doInit(aosp.app.hello.HelloApp@7a37593)
+04-28 09:45:23.925  3575  3575 D HelloUtils: <- doInit(aosp.app.hello.HelloApp@7a37593)
+04-28 09:45:23.925  3575  3575 D HelloUtils: <- initService(aosp.app.hello.HelloApp@7a37593)
+04-28 09:45:23.925  3575  3575 D HelloApp: <- onCreate()
+04-28 09:45:23.951  3575  3575 D HelloService: => onCreate()
+04-28 09:45:23.951  3575  3575 D HelloService: <- onCreate()
+04-28 09:45:23.951  3575  3575 D HelloService: => onStartCommand(Intent { act=aosp.app.hello.intent.action.INIT cmp=aosp.app.hello/.HelloService }, 0, 1)
+04-28 09:45:23.951  3575  3575 D HelloService: => actionInit(null)
+04-28 09:45:23.951  3575  3575 D HelloUtils: => initService(aosp.app.hello.HelloService@7a7bdc9)
+04-28 09:45:23.951  3575  3575 D HelloUtils: <- initService(aosp.app.hello.HelloService@7a7bdc9)
+04-28 09:45:23.951  3575  3575 D HelloService: <- actionInit(null)
+04-28 09:45:23.951  3575  3575 D HelloService: <- onStartCommand(Intent { act=aosp.app.hello.intent.action.INIT cmp=aosp.app.hello/.HelloService }, 0, 1)
+04-28 09:45:27.559  3575  3596 I zygote64: Debugger is no longer active
