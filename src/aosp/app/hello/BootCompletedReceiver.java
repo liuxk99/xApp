@@ -17,7 +17,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         sjLog.in();
         {
         }
-        sjLog.in();
+        sjLog.out();
     }
 
     @Override
