@@ -1,43 +1,41 @@
-01-01 08:00:14.754  2505  2622 V PackageParser: packageName: aosp.app.hello
-01-01 08:00:14.760  2505  2622 V PackageParser: packageName: aosp.app.hello
-01-01 08:00:14.812  2505  2505 I PackageManager: Package aosp.app.hello checking android.permission.RECEIVE_BOOT_COMPLETED: BasePermission{e2443b6 android.permission.RECEIVE_BOOT_COMPLETED}
-04-28 09:44:12.530  2505  2648 I PackageManager: Package aosp.app.hello checking android.permission.RECEIVE_BOOT_COMPLETED: BasePermission{e2443b6 android.permission.RECEIVE_BOOT_COMPLETED}
-04-30 08:36:31.981  2505  2555 D ActivityManager-Keeper: launch persistent app aosp.app.hello
-04-30 08:36:32.018  2505  2555 I am_proc_start: [0,3156,10043,aosp.app.hello,added application,aosp.app.hello]
-04-30 08:36:32.018  2505  2555 I ActivityManager: Start proc 3156:aosp.app.hello/u0a43 for added application aosp.app.hello
-04-30 08:36:32.019  2505  2555 V ActivityManager-Killer: ***Creating new process aosp.app.hello/3156 from system_server/2505
-04-30 08:36:32.238  2505  2982 I am_proc_bound: [0,3156,aosp.app.hello]
-04-30 08:36:32.388  3156  3156 E zygote64: Dex checksum does not match for dex: /vendor/app/xApp/xApp.apk.Expected: 3995679853, actual: 2231456822
-04-30 08:36:32.562  3156  3156 D HelloApp: => onCreate()
-04-30 08:36:32.585  3156  3156 D HelloUtils: => initService(aosp.app.hello.HelloApp@7a37593)
-04-30 08:36:32.586  3156  3156 D HelloUtils: => doInit(aosp.app.hello.HelloApp@7a37593)
-04-30 08:36:32.604  2505  3006 I am_create_service: [0,127871891,.HelloService,10043,3156]
-04-30 08:36:32.607  3156  3156 D HelloUtils: <- doInit(aosp.app.hello.HelloApp@7a37593)
-04-30 08:36:32.607  3156  3156 D HelloUtils: <- initService(aosp.app.hello.HelloApp@7a37593)
-04-30 08:36:32.607  3156  3156 D HelloApp: <- onCreate()
-04-30 08:36:32.623  3156  3156 D HelloService: => onCreate()
-04-30 08:36:32.623  3156  3156 D HelloService: <- onCreate()
-04-30 08:36:32.625  3156  3156 D HelloService: => onStartCommand(Intent { act=aosp.app.hello.intent.action.INIT cmp=aosp.app.hello/.HelloService }, 0, 1)
-04-30 08:36:32.625  3156  3156 D HelloService: => actionInit(null)
-04-30 08:36:32.625  3156  3156 D HelloUtils: => initService(aosp.app.hello.HelloService@7a7bdc9)
-04-30 08:36:32.625  3156  3156 D HelloUtils: <- initService(aosp.app.hello.HelloService@7a7bdc9)
-04-30 08:36:32.625  3156  3156 D HelloService: <- actionInit(null)
-04-30 08:36:32.625  3156  3156 D HelloService: <- onStartCommand(Intent { act=aosp.app.hello.intent.action.INIT cmp=aosp.app.hello/.HelloService }, 0, 1)
-04-30 08:36:42.026  3512  3739 I PluginFramework -- WidgetManager: getWidget id =#aosp.app.hello#
-04-30 08:36:42.027  3512  3739 I PackageManagerHookHandle: getPackageInfo(aosp.app.hello) fail ,packageInfo is null
-04-30 08:36:42.035  3512  3739 I AppPlugin: AppDataModel -- loadAllItems every itemInfo = [ title = xApp packageName = aosp.app.hello className = aosp.app.hello.MainActivity type = 0 flags = 948485709 ]
-04-30 08:36:42.262  3512  3739 I AppPlugin: ItemInfoDBHelper -- getAllItemAndFolder ItemInfo = [ title = xApp packageName = aosp.app.hello className = aosp.app.hello.MainActivity type = 0 flags = 948485709 ]
-04-30 08:36:43.305  3512  3512 I AppExUtils: [com.stv.deskplatform][1.3.1904.025] : pkgName in localapp list:aosp.app.hello // 0
-04-30 08:36:43.359  3512  3512 I MainDataLoader: [com.stv.deskplatform][1.3.1904.025] : peocessAppToList packageName: aosp.app.hello
-04-30 08:36:48.198  3512  3512 I AppExUtils: [com.stv.deskplatform][1.3.1904.025] : pkgName in localapp list:aosp.app.hello // 0
-04-30 08:36:48.236  3512  3512 I MainDataLoader: [com.stv.deskplatform][1.3.1904.025] : peocessAppToList packageName: aosp.app.hello
-04-30 08:36:52.646  3156  3156 D BootCompletedReceiver: => BootCompletedReceiver()
-04-30 08:36:52.646  3156  3156 D BootCompletedReceiver: => BootCompletedReceiver()
-04-30 08:36:52.646  3156  3156 D BootCompletedReceiver: => onReceive(android.app.ReceiverRestrictedContext@b53cce, Intent { act=android.intent.action.BOOT_COMPLETED flg=0x9000010 cmp=aosp.app.hello/.BootCompletedReceiver (has extras) },)
-04-30 08:36:52.647  3156  3156 D BootCompletedReceiver: => doActionBootCompleted(Bundle[mParcelledData.dataSize=84])
-04-30 08:36:52.647  3156  3156 D BootCompletedReceiver: <- doActionBootCompleted(Bundle[mParcelledData.dataSize=84])
-04-30 08:36:52.647  3156  3156 D BootCompletedReceiver: <- onReceive(android.app.ReceiverRestrictedContext@b53cce, Intent { act=android.intent.action.BOOT_COMPLETED flg=0x9000010 cmp=aosp.app.hello/.BootCompletedReceiver (has extras) },)
-04-30 08:36:54.987  3156  3172 I zygote64: Debugger is no longer active
-04-30 08:36:54.987  3156  3172 I zygote64: Debugger is no longer active
-04-30 08:36:57.282  4047  4139 E STVADLOG3: AppOpenAdListRequestTask,  appName xApp pkg aosp.app.hello
-04-30 08:36:57.288  4047  4139 D STVADLOG3: FileUtils, create file /fastplay/.admanager/SplashAppList/aosp.app.hello true
+01-01 08:00:15.105  2494  2621 V PackageParser: packageName: aosp.app.hello
+01-01 08:00:15.119  2494  2621 V PackageParser: packageName: aosp.app.hello
+01-01 08:00:15.195  2494  2494 I PackageManager: Package aosp.app.hello checking android.permission.RECEIVE_BOOT_COMPLETED: BasePermission{6d678b7 android.permission.RECEIVE_BOOT_COMPLETED}
+04-28 09:44:12.549  2494  2649 I PackageManager: Package aosp.app.hello checking android.permission.RECEIVE_BOOT_COMPLETED: BasePermission{6d678b7 android.permission.RECEIVE_BOOT_COMPLETED}
+04-30 09:04:03.634  2494  2518 D ActivityManager-Keeper: launch persistent app aosp.app.hello
+04-30 09:04:03.654  2494  2518 I am_proc_start: [0,3099,10043,aosp.app.hello,added application,aosp.app.hello]
+04-30 09:04:03.654  2494  2518 I ActivityManager: Start proc 3099:aosp.app.hello/u0a43 for added application aosp.app.hello
+04-30 09:04:03.654  2494  2518 V ActivityManager-Killer: ***Creating new process aosp.app.hello/3099 from system_server/2494
+04-30 09:04:03.943  2494  2997 I am_proc_bound: [0,3099,aosp.app.hello]
+04-30 09:04:04.562  3099  3099 E zygote64: Dex checksum does not match for dex: /vendor/app/xApp/xApp.apk.Expected: 1269130115, actual: 2231456822
+04-30 09:04:04.704  3099  3099 D HelloApp: => onCreate()
+04-30 09:04:04.705  3099  3099 D HelloUtils: => initService(aosp.app.hello.HelloApp@7a37593)
+04-30 09:04:04.705  3099  3099 D HelloUtils: => doInit(aosp.app.hello.HelloApp@7a37593)
+04-30 09:04:04.708  2494  3003 I am_create_service: [0,140792859,.HelloService,10043,3099]
+04-30 09:04:04.719  3099  3099 D HelloUtils: <- doInit(aosp.app.hello.HelloApp@7a37593)
+04-30 09:04:04.719  3099  3099 D HelloUtils: <- initService(aosp.app.hello.HelloApp@7a37593)
+04-30 09:04:04.719  3099  3099 D HelloApp: <- onCreate()
+04-30 09:04:04.734  3099  3099 D HelloService: => onCreate()
+04-30 09:04:04.734  3099  3099 D HelloService: <- onCreate()
+04-30 09:04:04.735  3099  3099 D HelloService: => onStartCommand(Intent { act=aosp.app.hello.intent.action.INIT cmp=aosp.app.hello/.HelloService }, 0, 1)
+04-30 09:04:04.736  3099  3099 D HelloService: => actionInit(null)
+04-30 09:04:04.736  3099  3099 D HelloUtils: => initService(aosp.app.hello.HelloService@7a7bdc9)
+04-30 09:04:04.736  3099  3099 D HelloUtils: <- initService(aosp.app.hello.HelloService@7a7bdc9)
+04-30 09:04:04.736  3099  3099 D HelloService: <- actionInit(null)
+04-30 09:04:04.736  3099  3099 D HelloService: <- onStartCommand(Intent { act=aosp.app.hello.intent.action.INIT cmp=aosp.app.hello/.HelloService }, 0, 1)
+04-30 09:04:11.232  3099  3099 D HelloApp: => onTrimMemory(15)
+04-30 09:04:11.232  3099  3099 D HelloApp: <- onTrimMemory(15)
+04-30 09:04:14.832  3619  3816 I PluginFramework -- WidgetManager: getWidget id =#aosp.app.hello#
+04-30 09:04:14.832  3619  3816 I PackageManagerHookHandle: getPackageInfo(aosp.app.hello) fail ,packageInfo is null
+04-30 09:04:14.848  3619  3816 I AppPlugin: AppDataModel -- loadAllItems every itemInfo = [ title = xApp packageName = aosp.app.hello className = aosp.app.hello.MainActivity type = 0 flags = 948485709 ]
+04-30 09:04:21.878  3619  3619 I AppExUtils: [com.stv.deskplatform][1.3.1904.025] : pkgName in localapp list:aosp.app.hello // 0
+04-30 09:04:21.923  3619  3619 I MainDataLoader: [com.stv.deskplatform][1.3.1904.025] : peocessAppToList packageName: aosp.app.hello
+04-30 09:04:24.249  3099  3099 D BootCompletedReceiver: => BootCompletedReceiver()
+04-30 09:04:24.249  3099  3099 D BootCompletedReceiver: => BootCompletedReceiver()
+04-30 09:04:24.249  3099  3099 D BootCompletedReceiver: => onReceive(android.app.ReceiverRestrictedContext@b53cce, Intent { act=android.intent.action.BOOT_COMPLETED flg=0x9000010 cmp=aosp.app.hello/.BootCompletedReceiver (has extras) },)
+04-30 09:04:24.249  3099  3099 D BootCompletedReceiver: => doActionBootCompleted(Bundle[mParcelledData.dataSize=84])
+04-30 09:04:24.249  3099  3099 D BootCompletedReceiver: <- doActionBootCompleted(Bundle[mParcelledData.dataSize=84])
+04-30 09:04:24.249  3099  3099 D BootCompletedReceiver: <- onReceive(android.app.ReceiverRestrictedContext@b53cce, Intent { act=android.intent.action.BOOT_COMPLETED flg=0x9000010 cmp=aosp.app.hello/.BootCompletedReceiver (has extras) },)
+04-30 09:04:25.062  3099  3106 I zygote64: Debugger is no longer active
+04-30 09:04:29.309  4115  4213 E STVADLOG3: AppOpenAdListRequestTask,  appName xApp pkg aosp.app.hello
+04-30 09:04:29.310  4115  4213 D STVADLOG3: FileUtils, create file /fastplay/.admanager/SplashAppList/aosp.app.hello true

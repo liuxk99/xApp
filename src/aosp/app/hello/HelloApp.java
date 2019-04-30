@@ -3,12 +3,43 @@ package aosp.app.hello;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
+import android.content.res.Configuration;
 import android.os.IBinder;
 
 public class HelloApp extends Application implements ServiceConnection {
     private String TAG = HelloApp.class.getSimpleName();
     SjLogGen mLogGen = new SjLogGen(TAG);
     private IBinder mSerivce;
+
+    @Override
+    public void onLowMemory() {
+        SjLog sjLog = mLogGen.build("onLowMemory()");
+        sjLog.in();
+        {
+            super.onLowMemory();
+        }
+        sjLog.out();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        SjLog sjLog = mLogGen.build("onConfigurationChanged(" + newConfig + ")");
+        sjLog.in();
+        {
+            super.onConfigurationChanged(newConfig);
+        }
+        sjLog.out();
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        SjLog sjLog = mLogGen.build("onTrimMemory(" + level + ")");
+        sjLog.in();
+        {
+            super.onTrimMemory(level);
+        }
+        sjLog.out();
+    }
 
     @Override
     public void onCreate() {
