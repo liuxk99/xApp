@@ -3,21 +3,26 @@ package aosp.app.hello;
 import android.util.Log;
 
 class SjLog {
-    private String mMsg;
     private static final String PREFIX_IN = "=> ";
     private static final String PREFIX_OUT = "<- ";
+    private String mMsg;
+    private String mTag;
 
-    SjLog(String msg) {
+    SjLog(String tag) {
+        mTag = tag;
+    }
+
+    void setMsg(final String msg) {
         mMsg = msg;
     }
 
-    String inStr() {
+    private String inStr() {
         if (mMsg != null)
             return PREFIX_IN + mMsg;
         return PREFIX_IN;
     }
 
-    String outStr() {
+    private String outStr() {
         if (mMsg != null)
             return PREFIX_OUT + mMsg;
         return PREFIX_OUT;
@@ -29,5 +34,17 @@ class SjLog {
 
     void outD(final String TAG) {
         Log.d(TAG, outStr());
+    }
+
+    void in() {
+        if (mTag != null) {
+            Log.d(mTag, inStr());
+        }
+    }
+
+    void out() {
+        if (mTag != null) {
+            Log.d(mTag, outStr());
+        }
     }
 }

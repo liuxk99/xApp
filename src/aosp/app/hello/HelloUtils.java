@@ -5,29 +5,30 @@ import android.content.Intent;
 
 class HelloUtils {
     private static final String TAG = HelloUtils.class.getSimpleName();
+    private static SjLogGen mLogGen = new SjLogGen(TAG);
 
     static boolean mInitialized = false;
 
-    static void initService(Context context) {
-        SjLog sjLog = new SjLog("initService(" + context + ")");
-        sjLog.inD(TAG);
-
-        if (!mInitialized) {
-            doInit(context);
-            mInitialized = true;
+    private static void doInit(Context context) {
+        SjLog sjLog = mLogGen.build("doInit(" + context + ")");
+        sjLog.in();
+        {
+            Intent i = new Intent(context, HelloService.class);
+            i.setAction(HelloService.ACTION_INIT);
+            context.startService(i);
         }
-
-        sjLog.outD(TAG);
+        sjLog.out();
     }
 
-    private static void doInit(Context context) {
-        SjLog sjLog = new SjLog("doInit(" + context + ")");
-        sjLog.inD(TAG);
-
-        Intent i = new Intent(context, HelloService.class);
-        i.setAction(HelloService.ACTION_INIT);
-        context.startService(i);
-
-        sjLog.outD(TAG);
+    static void initService(Context context) {
+        SjLog sjLog = mLogGen.build("initService(" + context + ")");
+        sjLog.in();
+        {
+            if (!mInitialized) {
+                doInit(context);
+                mInitialized = true;
+            }
+        }
+        sjLog.out();
     }
 }
