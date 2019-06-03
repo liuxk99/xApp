@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.content.res.Configuration;
 import android.os.IBinder;
+import android.os.SystemProperties;
 
 public class HelloApp extends Application implements ServiceConnection {
     private String TAG = HelloApp.class.getSimpleName();
@@ -47,6 +48,7 @@ public class HelloApp extends Application implements ServiceConnection {
         sjLog.in();
         {
             super.onCreate();
+            SystemProperties.get("ro.build.version");
             HelloUtils.initService(this);
 //            bindService(i, this, 0x0);
         }

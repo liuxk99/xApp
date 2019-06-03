@@ -11,13 +11,14 @@ LOCAL_SRC_FILES := $(call all-java-files-under,$(src_dirs))
 # unbundled
 LOCAL_STATIC_JAVA_LIBRARIES += android-support-v4
 
-LOCAL_SDK_VERSION := current
+#LOCAL_SDK_VERSION := current
 
-LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, $(res_dirs))
+#LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, $(res_dirs))
 
 LOCAL_PACKAGE_NAME := xApp
+LOCAL_CERTIFICATE := platform
 
-LOCAL_PROGUARD_FLAG_FILES := proguard-project.txt
+#LOCAL_PROGUARD_FLAG_FILES := proguard-project.txt
 
 ifneq ($(filter letv_jason%, $(TARGET_PRODUCT)),)
 LOCAL_VENDOR_MODULE := true
