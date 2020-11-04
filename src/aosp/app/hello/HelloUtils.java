@@ -2,11 +2,9 @@ package aosp.app.hello;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.IPackageInstallObserver;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 
-import java.io.File;
+import com.sj4a.utils.SjLog;
+import com.sj4a.utils.SjLogGen;
 
 class HelloUtils {
     private static final String TAG = HelloUtils.class.getSimpleName();
@@ -35,13 +33,5 @@ class HelloUtils {
             }
         }
         sjLog.out();
-    }
-
-    public static void installPackage(
-            PackageManager pm, File packageFile, IPackageInstallObserver observer, int flags,
-            String installerPackageName) {
-        if (pm != null) {
-            pm.installPackage(Uri.fromFile(packageFile), observer, flags, installerPackageName);
-        }
     }
 }

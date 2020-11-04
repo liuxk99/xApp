@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.sj4a.utils.SjLog;
+import com.sj4a.utils.SjLogGen;
+
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     static final String TAG = BootCompletedReceiver.class.getSimpleName();

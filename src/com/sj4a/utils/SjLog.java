@@ -1,8 +1,8 @@
-package aosp.app.hello;
+package com.sj4a.utils;
 
 import android.util.Log;
 
-class SjLog {
+public class SjLog {
     private static final String PREFIX_IN = "=> ";
     private static final String PREFIX_OUT = "<- ";
     private String mMsg;
@@ -36,13 +36,13 @@ class SjLog {
         Log.d(TAG, outStr());
     }
 
-    void in() {
+    public void in() {
         if (mTag != null) {
             Log.d(mTag, inStr());
         }
     }
 
-    void out() {
+    public void out() {
         if (mTag != null) {
             Log.d(mTag, outStr());
         }

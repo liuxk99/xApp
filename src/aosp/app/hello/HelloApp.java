@@ -7,6 +7,9 @@ import android.content.res.Configuration;
 import android.os.IBinder;
 import android.os.SystemProperties;
 
+import com.sj4a.utils.SjLog;
+import com.sj4a.utils.SjLogGen;
+
 public class HelloApp extends Application implements ServiceConnection {
     private String TAG = HelloApp.class.getSimpleName();
     SjLogGen mLogGen = new SjLogGen(TAG);

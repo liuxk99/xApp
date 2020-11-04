@@ -1,21 +1,25 @@
-package aosp.app.hello;
+package com.sj4a.utils.pkg;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.IPackageInstallObserver;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 
 import com.sj4a.utils.SjLog;
 import com.sj4a.utils.SjLogGen;
 
+import java.io.File;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
-public class HelloService extends Service {
-    final String TAG = HelloService.class.getSimpleName();
-    SjLogGen mLogGen = new SjLogGen(TAG);
+import static android.content.pm.PackageManager.INSTALL_REPLACE_EXISTING;
 
-    static final String ACTION_INIT = "aosp.app.hello.intent.action.INIT";
+public class PkgService extends Service {
+    final String TAG = PkgService.class.getSimpleName();
+    SjLogGen mLogGen = new SjLogGen(TAG);
 
     @Override
     public void onCreate() {
@@ -34,8 +38,8 @@ public class HelloService extends Service {
         int res = 0;
         {
             final String a = intent.getAction();
-            if (ACTION_INIT.equals(a)) {
-                actionInit(intent.getExtras());
+            if (PkgConstants.ACTION_INSTALL.equals(a)) {
+                actionInstall(intent.getExtras());
             }
             res = super.onStartCommand(intent, flags, startId);
         }
@@ -44,13 +48,25 @@ public class HelloService extends Service {
         return res;
     }
 
-    private void actionInit(Bundle extras) {
-        SjLog sjLog = mLogGen.build("actionInit(" + extras + ")");
+    private void actionInstall(Bundle extras) {
+        SjLog sjLog = mLogGen.build("actionInstall(" + extras + ")");
         sjLog.in();
         {
-            HelloUtils.initService(this);
+            final String pkgFile = extras.getString("pkg_file");
+            PackageManager pm = this.getPackageManager();
+            PkgUtils.installPackage(pm,
+                    new File(pkgFile),
+                    new PackageInstallObserver(),
+                    INSTALL_REPLACE_EXISTING,
+                    getPackageName());
         }
         sjLog.out();
+    }
+
+    class PackageInstallObserver extends IPackageInstallObserver.Stub {
+        public void packageInstalled(String packageName, int returnCode) {
+            Log.i(TAG, "packageName: " + packageName + "; returnCode: " + returnCode);
+        }
     }
 
     @Override

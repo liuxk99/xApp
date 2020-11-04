@@ -1,13 +1,13 @@
-package aosp.app.hello;
+package com.sj4a.utils;
 
-class SjLogGen {
+public class SjLogGen {
     private final String mTag;
 
-    SjLogGen(String tag) {
+    public SjLogGen(String tag) {
         mTag = tag;
     }
 
-    SjLog build(String msg) {
+    public SjLog build(String msg) {
         SjLog sjLog = new SjLog(this.mTag);
         sjLog.setMsg(msg);
         return sjLog;

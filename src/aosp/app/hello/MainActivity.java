@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.sj4a.utils.SjLog;
+import com.sj4a.utils.SjLogGen;
+
 public class MainActivity extends Activity {
     final String TAG = HelloService.class.getSimpleName();
     SjLogGen mLogGen = new SjLogGen(TAG);

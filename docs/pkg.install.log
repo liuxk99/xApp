@@ -1,0 +1,31 @@
+$ adb shell rm /data/dalvik-cache/arm/system@app@xApp@xApp.apk@classes.dex
+$ adb uninstall com.qsp.launcher
+$ adb logcat -c; \
+> adb shell am startservice -a "sj.intent.action.INSTALL" --es "pkg_file" "/mnt/media_rw/udisk/udisk0/qspLauncher_170209-162009_v2.29_zndsStore.apk"; \
+> adb logcat -v threadtime PkgService:V PkgUtils:V PackageManager:V *:S
+Starting service: Intent { act=sj.intent.action.INSTALL (has extras) }
+--------- beginning of main
+--------- beginning of system
+11-04 14:35:34.344  3899  3899 D PkgService: => onStartCommand(Intent { act=sj.intent.action.INSTALL (has extras) }, 0, 2)
+11-04 14:35:34.344  3899  3899 D PkgService: => actionInstall(Bundle[mParcelledData.dataSize=184])
+11-04 14:35:34.344  3899  3899 D PkgUtils: => installPackage(android.app.ApplicationPackageManager@10106601, /mnt/media_rw/udisk/udisk0/qspLauncher_170209-162009_v2.29_zndsStore.apk, com.sj4a.utils.pkg.PkgService$PackageInstallObserver@1c020294, 2, aosp.app.hello)
+11-04 14:35:34.361  3899  3899 D PkgUtils: <- installPackage(android.app.ApplicationPackageManager@10106601, /mnt/media_rw/udisk/udisk0/qspLauncher_170209-162009_v2.29_zndsStore.apk, com.sj4a.utils.pkg.PkgService$PackageInstallObserver@1c020294, 2, aosp.app.hello)
+11-04 14:35:34.361  3899  3899 D PkgService: <- actionInstall(Bundle[mParcelledData.dataSize=184])
+11-04 14:35:34.362  3899  3899 D PkgService: <- onStartCommand(Intent { act=sj.intent.action.INSTALL (has extras) }, 0, 2)
+11-04 14:35:34.378  3452  3483 I PackageManager: init_copy idx=0: InstallParams{1dab748a file=/mnt/media_rw/udisk/udisk0/qspLauncher_170209-162009_v2.29_zndsStore.apk cid=null}
+11-04 14:35:34.734  3452  3483 I PackageManager: mcs_bound
+11-04 14:35:34.734  3452  3483 I PackageManager: startCopy UserHandle{0}: InstallParams{1dab748a file=/mnt/media_rw/udisk/udisk0/qspLauncher_170209-162009_v2.29_zndsStore.apk cid=null}
+11-04 14:35:38.635  3452  3483 D PackageManager: installPackageLI: path=/data/app/vmdl1830859736.tmp
+11-04 14:35:44.819  3452  3483 D PackageManager: manifestDigest was not present, but parser got: ManifestDigest {mDigest=b8,b0,98,b8,39,48,fb,6a,df,a0,e6,1b,97,ad,e3,82,b9,d3,30,de,73,69,90,f2,d0,16,46,4d,bd,95,ce,39,}
+11-04 14:35:44.819  3452  3483 D PackageManager: Renaming /data/app/vmdl1830859736.tmp to /data/app/com.qsp.launcher-2
+11-04 14:35:44.820  3452  3483 D PackageManager: installNewPackageLI: Package{2a5ef29b com.qsp.launcher}
+11-04 14:35:45.018  3452  3483 I PackageManager: Linking native library dir for /data/app/com.qsp.launcher-2
+11-04 14:35:45.058  3452  3483 I PackageManager: Running dexopt on: /data/app/com.qsp.launcher-2/base.apk pkg=com.qsp.launcher isa=arm vmSafeMode=false
+11-04 14:35:59.704  3452  3483 D PackageManager: New package installed in /data/app/com.qsp.launcher-2
+11-04 14:35:59.785  3452  3483 V PackageManager: + starting restore round-trip 2
+11-04 14:35:59.795  3452  3483 V PackageManager: token 2 to BM for possible restore
+11-04 14:35:59.796  3452  3483 V PackageManager: BM finishing package install for 2
+11-04 14:35:59.816  3452  3483 I PackageManager: mcs_unbind
+11-04 14:35:59.816  3452  3483 I PackageManager: calling disconnectService()
+11-04 14:35:59.820  3452  3483 V PackageManager: Handling post-install for 2
+11-04 14:36:00.066  3899  3917 I PkgService: packageName: com.qsp.launcher; returnCode: 1
