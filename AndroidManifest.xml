@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="aosp.app.hello"
+    android:sharedUserId="android.uid.system"
     android:versionCode="4"
     android:versionName="1.1">
 
@@ -13,6 +14,8 @@
     <!-- feature: BootCompletedReceiver -->
     <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.SET_TIME"/>
 
     <application
         android:name=".HelloApp"
@@ -43,6 +46,7 @@
         <service android:name=".HelloService">
             <intent-filter>
                 <action android:name="aosp.app.hello.intent.action.INIT" />
+                <action android:name="aosp.app.hello.intent.action.UPTIME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
