@@ -1,3 +1,5 @@
 .idea/
 gen/
 Log.*/
+nohup.out
+xApp.iml

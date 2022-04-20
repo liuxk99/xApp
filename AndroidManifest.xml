@@ -47,13 +47,6 @@
             </intent-filter>
         </service>
 
-        <service android:name="com.sj4a.utils.pkg.PkgService">
-            <intent-filter>
-                <action android:name="sj.intent.action.INSTALL" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
-
     </application>
 
 </manifest>
