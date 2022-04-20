@@ -1,2 +1,2 @@
 # xApp
-demo for app in AOSP source environment development
+Demo app in AOSP source development environment
